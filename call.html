@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>영화 소개</title>
+<link rel="stylesheet" href="stylet.css">
+
+<style>
+    div.item:nth-child(1) { background: rgba(255, 255, 255, 0.452); }
+    div.item:nth-child(2) { background: rgba(255, 255, 255, 0.452); }
+    div.item:nth-child(3) { background-color: rgba(255, 255, 255, 0.452); }
+</style>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script>
+
+
+    var result = confirm("스릴러 장르입니다. (뒤로가기는 취소를 눌러주세요.)");
+        
+    if(result)
+        {
+        }
+    else
+    {
+         history.back()
+    }
+
+    $(document).ready(function () {
+        var width = $('[data-role="slider"]').attr('data-width');
+        var height = $('[data-role="slider"]').attr('data-height');
+        var count = $('[data-role="slider"] div.item').length;
+        
+        $('[data-role="slider"]').css({
+            position: 'relative',
+            overflow: 'hidden',
+            left:'35%',
+            width: width,
+            height: height
+        }).find('.container').css({
+            position: 'absolute',
+            width: count * width,
+            overflow: 'hidden'
+        }).find('.item').css({
+            width: width,
+            height: height,
+            float: 'left'
+        });
+        var currentPage = 0;
+        var changePage = function () {
+            $('[data-role="slider"] > .container').animate({
+                left: -currentPage * width
+            }, 500);
+        };
+        $('#left-button').click(function () {
+            if (currentPage > 0) {
+                currentPage = currentPage - 1;
+                changePage();
+            }
+        });
+        $('#right-button').click(function () {
+            if (currentPage < count - 1) {
+                currentPage = currentPage + 1;
+                changePage();
+            }
+        });
+    });
+</script>
+</head>
+<body>
+<div id="con">
+    <header>
+        <div id="logo">
+            <a href="index.html">
+                <h1>movie</h1>
+            </a>
+        </div>
+        <nav>
+            <ul id="topMenu">
+                <li><a href="#">romance &nbsp;&nbsp;<span>▼</span></a>
+                    <ul>
+                        <li><a href="hello.html">안녕 헤이즐</a></li>
+                        <li><a href="kissing.html">키싱부스</a></li>
+                        <li><a href="time.html">어바웃 타임</a></li>
+                        <li><a href="your.html">너의 결혼식</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">comedy &nbsp;&nbsp;<span> ▼</span></a>
+                    <ul>
+                        <li><a href="hard.html">극한직업</a></li>
+                        <li><a href="twen.html">스물</a></li>
+                        <li><a href="men.html">청년경찰</a></li>
+                        <li><a href="possible.html">미션 파서블</a></li>
+
+
+                    </ul>
+                </li>
+                <li><a href="#">action &nbsp;&nbsp;<span>▼</span></a>
+                    <ul>
+                        <li><a href="dark.html">다크 나이트</a></li>
+                        <li><a href="car.html">본노의 질주</a></li>
+                        <li><a href="lee.html">신세계</a></li>
+                        <li><a href="ae.html">베테랑</a></li>
+
+                    </ul>
+                  </li>
+                
+                <li><a href="#">thriller &nbsp;&nbsp;<span>▼</spar></a>
+                    <ul>
+                        <li><a href="tna.html">숨바꼭질</a></li>
+                        <li><a href="o.html">오펀</a></li>
+                        <li><a href="zjs.html">컨저링</a></li>
+                        <li><a href="call.html">콜</a></li>
+                        </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <article id="media">
+            <p>
+            <video src="media/call/call.mp4" width ="700" height="500"
+                controls >
+            error
+            </video>
+            </p>
+        </article>
+
+        <article id="info">
+            <div>
+            <h2><br><br><br>콜</h2><br><br>
+
+            <p><b>- 출연 -</b><br>
+
+            <br>박신혜(서연 역), 전동서(영숙 역),
+            <br>김성령(서연 엄마 역), 박호산(서연 아빠 역)<br><br>
+
+            <b>- 개봉 -</b><br>
+            <br>2020년 11월 27일<br><br>
+
+            <br><b>- 국가 -</b><br>
+            <br>한국<br><br>
+
+            <br><b>- 러닝타임 -</b><br>
+            <br>112분<br><br>
+
+            <br><b>- 평점 -</b><br>
+            <br>7.59<br><br>
+            
+            <br><b>- 줄거리 -</b><br><br>
+            거기 지금 몇 년도죠?” 오랜만에 집으로 돌아온 ‘서연’(박신혜).<br>
+            집에 있던 낡은 전화기를 연결했다가 ‘영숙’(전종서)이란 이름의<br>
+            낯선 여자와 전화를 하게 된다. ‘서연’은 ‘영숙’이 20년 전,<br>
+            같은 집에 살았던 사람이란 사실을 깨닫고 그때부터 두 사람은 우정을 쌓아간다.<br>
+            “내가 말했지, 함부로 전화 끊지 말라고.” 그러던 어느 날, ‘서연’과 ‘영숙’은<br>
+            각자의 현재에서 서로의 인생을 바꿀 위험한 선택을 하게 된다.<br>
+            ‘영숙’은 20년 전 죽은 ‘서연’의 아빠를 살려주고, ‘서연’은 ‘영숙’의<br>
+            미래를 알려준 것. 그러나 자신의 끔찍한 미래를 알게 된 ‘영숙’이<br>
+            예상치 못한 폭주를 하면서 ‘서연’을 위협하기 시작하는데…!<br>
+            금기를 깨버린 전화 한 통 살인마가 눈을 뜬다</p><br><br>
+            </div>
+        </article>
+
+        <article id="who">
+            <br><br><br><h2>스틸컷</h2><br><br>
+            <div data-role="slider" data-width="500" data-height="300">
+                <div class="container">
+                    <div class="item">
+                        <img src="media/call/call1.jpg" alt="이미지 오류">
+                    </div>
+                    <div class="item">
+                        <img src="media/call/call2.jpg" alt="이미지 오류">
+                    </div>
+                    <div class="item">
+                        <img src="media/call/call3.jpg" alt="이미지 오류">
+                    </div>
+                </div>
+            </div>         
+            <br><br>   
+            <button id="left-button">◀</button>
+            &nbsp;&nbsp;<button id="right-button">▶</button><br><br><br>
+        </article>
+
+        <article id="review">
+        <br><br><br><h2>리뷰</h2><br><br>
+        <details>
+            <br><br><summary>리뷰를 보고싶다면 아이콘을 클릭하세요</summary>
+            <P>이 영화는 넷플릭스에서 만들어진 영화이다.<br>
+                원래 시간여행 하는 장르는 경우의 수가 많아서 <br>
+                "이렇게 하면 되지 않나?" 이런 생각들이 많아져서<br>
+                선호하는 편은 아닌데 친구가 무섭다고 같이 보자고<br>
+                하길래 한번 봐봤다. 솔직히 이 영화를 보면서도<br>
+                그런 생각이 들긴 했지만 이런 생각이 사라질 정도로 무서웠다.<br>
+                넷플릭스 계정이 있고 스릴러 영화를 좋아한다면 한 번쯤은.. 
+            </P>
+        </details><br><br><br><br>
+        </article>
+    </section>
+</div>
+<nav>
+    <div id="quick">
+    <br>
+    <h2>바로가기</h2><br>
+    <a href="#media">예고편</a><br><br>
+    <a href="#info">영화 정보</a><br><br>
+    <a href="#who">스틸컷</a><br><br>
+    <a href="#review">리뷰</a><br><br>
+    <a href="https://namu.wiki/w/%EC%BD%9C(%EC%98%81%ED%99%94)" target="_blank"><img src="media/call/callq.jpg"></a>
+    </div>
+
+</nav>
+
+
+<div id="random">
+    <a href="random.html" target="_blank"><p>랜덤으로<br> 영화<br>추천</p></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>영화 소개</title>
+<link rel="stylesheet" href="stylea.css">
+
+<style>
+    div.item:nth-child(1) { background: rgba(142, 200, 255, 0.658); }
+    div.item:nth-child(2) { background: rgba(142, 200, 255, 0.658); }
+    div.item:nth-child(3) { background-color: rgba(142, 200, 255, 0.658); }
+</style>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script>
+    $(document).ready(function () {
+        var width = $('[data-role="slider"]').attr('data-width');
+        var height = $('[data-role="slider"]').attr('data-height');
+        var count = $('[data-role="slider"] div.item').length;
+        
+        $('[data-role="slider"]').css({
+            position: 'relative',
+            overflow: 'hidden',
+            left:'35%',
+            width: width,
+            height: height
+        }).find('.container').css({
+            position: 'absolute',
+            width: count * width,
+            overflow: 'hidden'
+        }).find('.item').css({
+            width: width,
+            height: height,
+            float: 'left'
+        });
+        var currentPage = 0;
+        var changePage = function () {
+            $('[data-role="slider"] > .container').animate({
+                left: -currentPage * width
+            }, 500);
+        };
+        $('#left-button').click(function () {
+            if (currentPage > 0) {
+                currentPage = currentPage - 1;
+                changePage();
+            }
+        });
+        $('#right-button').click(function () {
+            if (currentPage < count - 1) {
+                currentPage = currentPage + 1;
+                changePage();
+            }
+        });
+    });
+</script>
+</head>
+<body>
+<div id="con">
+    <header>
+        <div id="logo">
+            <a href="index.html">
+                <h1>movie</h1>
+            </a>
+        </div>
+        <nav>
+            <ul id="topMenu">
+                <li><a href="#">romance &nbsp;&nbsp;<span>▼</span></a>
+                    <ul>
+                        <li><a href="hello.html">안녕 헤이즐</a></li>
+                        <li><a href="kissing.html">키싱부스</a></li>
+                        <li><a href="time.html">어바웃 타임</a></li>
+                        <li><a href="your.html">너의 결혼식</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">comedy &nbsp;&nbsp;<span> ▼</span></a>
+                    <ul>
+                        <li><a href="hard.html">극한직업</a></li>
+                        <li><a href="twen.html">스물</a></li>
+                        <li><a href="men.html">청년경찰</a></li>
+                        <li><a href="possible.html">미션 파서블</a></li>
+
+
+                    </ul>
+                </li>
+                <li><a href="#">action &nbsp;&nbsp;<span>▼</span></a>
+                    <ul>
+                        <li><a href="dark.html">다크 나이트</a></li>
+                        <li><a href="car.html">본노의 질주</a></li>
+                        <li><a href="lee.html">신세계</a></li>
+                        <li><a href="ae.html">베테랑</a></li>
+
+                    </ul>
+                  </li>
+                
+                <li><a href="#">thriller &nbsp;&nbsp;<span>▼</spar></a>
+                    <ul>
+                        <li><a href="tna.html">숨바꼭질</a></li>
+                        <li><a href="o.html">오펀</a></li>
+                        <li><a href="zjs.html">컨저링</a></li>
+                        <li><a href="call.html">콜</a></li>
+                        </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <article id="media">
+            <p>
+            <video src="media/ae/ae.mp4" width ="700" height="500"
+                controls >
+            error
+            </video>
+            </p>
+        </article>
+
+        <article id="info">
+            <div>
+            <h2><br><br><br>베테랑</h2><br><br>
+
+            <p><b>- 출연 -</b><br>
+
+            <br>황정민(서도철 역), 유아인(조태오 역),
+            <br>유해진(최상무 역), 오달수(오팀장 역)<br><br>
+
+            <b>- 개봉 -</b><br>
+            <br>2015년 8월 5일<br><br>
+
+            <br><b>- 국가 -</b><br>
+            <br>한국<br><br>
+
+            <br><b>- 러닝타임 -</b><br>
+            <br>123분<br><br>
+
+            <br><b>- 평점 -</b><br>
+            <br>9.24<br><br>
+            
+            <br><b>- 줄거리 -</b><br><br>
+            한 번 꽂힌 것은 무조건 끝을 보는 행동파 ‘서도철’(황정민),<br>
+            20년 경력의 승부사 ‘오팀장’(오달수), 위장 전문 홍일점 ‘미스봉’(장윤주),<br>
+            육체파 ‘왕형사’(오대환), 막내 ‘윤형사’(김시후)까지<br>
+            겁 없고, 못 잡는 것 없고, 봐 주는 것 없는 특수 강력사건 담당 광역수사대.<br>
+            오랫동안 쫓던 대형 범죄를 해결한 후 숨을 돌리려는 찰나,<br>
+            서도철은 재벌 3세 ‘조태오’(유아인)를 만나게 된다. 세상 무서울 것 없는<br>
+            안하무인의 조태오와 언제나 그의 곁을 지키는 오른팔 ‘최상무’(유해진).<br>
+            서도철은 의문의 사건을 쫓던 중 그들이 사건의 배후에 있음을 직감한다.<br>
+            건들면 다친다는 충고에도 불구하고 포기하지 않는 서도철의 집념에<br>
+            판은 걷잡을 수 없이 커져가고 조태오는 이를 비웃기라도 하듯 유유히<br>
+            포위망을 빠져 나가는데… 베테랑 광역수사대 VS 유아독존<br>
+            재벌 3세 2015년 여름, 자존심을 건 한판 대결이 시작된다!</p><br><br>
+            </div>
+        </article>
+
+        <article id="who">
+            <br><br><br><h2>스틸컷</h2><br><br>
+            <div data-role="slider" data-width="500" data-height="300">
+                <div class="container">
+                    <div class="item">
+                        <img src="media/ae/ae1.jpg" alt="이미지 오류">
+                    </div>
+                    <div class="item">
+                        <img src="media/ae/ae2.jpg" alt="이미지 오류">
+                    </div>
+                    <div class="item">
+                        <img src="media/ae/ae3.jpg" alt="이미지 오류">
+                    </div>
+                </div>
+            </div>         
+            <br><br>   
+            <button id="left-button">◀</button>
+            &nbsp;&nbsp;<button id="right-button">▶</button><br><br><br>
+        </article>
+
+        <article id="review">
+        <br><br><br><h2>리뷰</h2><br><br>
+        <details>
+            <br><br><summary>리뷰를 보고싶다면 아이콘을 클릭하세요</summary>
+            <P>베테랑은 중간중간 코믹요소가 있어서 너무<br>
+                좋았다. 개인적으로 액션 영화가 재밌으면 <br>
+                집중이 훨씬 잘된다. 이 영화는 관객이 엄청 많았다고<br>
+                유명했는데 그만큼 배우들의 연기력이 좋았고<br>
+                액션도 좋았다. 그리고 지금까지도 많이 언급되는<br>
+                유아인의 명대사도 있다. 그리고 개인적으로 좋아하는<br>
+                유해진, 오달수 씨도 나온다!
+            </P>
+        </details><br><br><br><br>
+        </article>
+    </section>
+</div>
+<nav>
+    <div id="quick">
+    <br>
+    <h2>바로가기</h2><br>
+    <a href="#media">예고편</a><br><br>
+    <a href="#info">영화 정보</a><br><br>
+    <a href="#who">스틸컷</a><br><br>
+    <a href="#review">리뷰</a><br><br>
+    <a href="https://namu.wiki/w/%EB%B2%A0%ED%85%8C%EB%9E%91(%EC%98%81%ED%99%94)" target="_blank"><img src="media/ae/aeq.jpg"></a>
+    </div>
+
+</nav>
+
+
+<div id="random">
+    <a href="random.html" target="_blank"><p>랜덤으로<br> 영화<br>추천</p></a>
+</div>
+</body>
+</html>

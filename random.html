@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>영화 추천</title>
+    <link rel="stylesheet" href="styleran.css">
+    <script>
+
+        window.onload = function () {
+            var count = 0;
+            var image = document.getElementById('image');
+            var frames = [
+                'media/ran1.jpg','media/ran2.jpg', 'media/ran3.jpg', 'media/ran4.jpg', 'media/ran5.jpg', 'media/ran6.jpg', 'media/ran7.jpg', 'media/ran8.jpg', 'media/ran9.jpg',
+                'media/ran10.jpg', 'media/ran11.jpg', 'media/ran12.jpg', 'media/ran13.jpg', 'media/ran14.jpg', 'media/ran15.jpg', 'media/ran16.jpg', 
+            ];
+            var Stop = document.getElementById('stop');
+             Stop.onclick=function stop(){
+                 clearInterval(interval);
+             }
+            var interval =setInterval(function () {
+                image.src = frames[count % frames.length];
+                count = count + 1;
+            }, 1000 / 20);
+        };
+
+
+    </script>
+
+</head>
+<body>
+    <h1>Random</h1><br><br>
+    <p>stop 버튼을 눌러보세요!</p>
+    <p>나타난 포스터의 영화를 추천합니다!</p>
+    <div>
+        <img id="image" width="400" height="500">
+    </div>
+
+    <div>
+        <img id="stop" src="media/stop.jpg" width="100" height="100"  >
+    </div>
+</body>
+</html>

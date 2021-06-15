@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>영화 소개</title>
+<link rel="stylesheet" href="style2.css">
+
+<style>
+    div.item:nth-child(1) { background: rgba(255, 193, 203, 0.445); }
+    div.item:nth-child(2) { background: rgba(255, 193, 203, 0.445); }
+    div.item:nth-child(3) { background-color: rgba(255, 193, 203, 0.445); }
+</style>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script>
+    $(document).ready(function () {
+        var width = $('[data-role="slider"]').attr('data-width');
+        var height = $('[data-role="slider"]').attr('data-height');
+        var count = $('[data-role="slider"] div.item').length;
+        
+        $('[data-role="slider"]').css({
+            position: 'relative',
+            overflow: 'hidden',
+            left:'35%',
+            width: width,
+            height: height
+        }).find('.container').css({
+            position: 'absolute',
+            width: count * width,
+            overflow: 'hidden'
+        }).find('.item').css({
+            width: width,
+            height: height,
+            float: 'left'
+        });
+        var currentPage = 0;
+        var changePage = function () {
+            $('[data-role="slider"] > .container').animate({
+                left: -currentPage * width
+            }, 500);
+        };
+        $('#left-button').click(function () {
+            if (currentPage > 0) {
+                currentPage = currentPage - 1;
+                changePage();
+            }
+        });
+        $('#right-button').click(function () {
+            if (currentPage < count - 1) {
+                currentPage = currentPage + 1;
+                changePage();
+            }
+        });
+    });
+</script>
+</head>
+<body>
+<div id="con">
+    <header>
+        <div id="logo">
+            <a href="index.html">
+                <h1>movie</h1>
+            </a>
+        </div>
+        <nav>
+            <ul id="topMenu">
+                <li><a href="#">romance &nbsp;&nbsp;<span>▼</span></a>
+                    <ul>
+                        <li><a href="hello.html">안녕 헤이즐</a></li>
+                        <li><a href="kissing.html">키싱부스</a></li>
+                        <li><a href="time.html">어바웃 타임</a></li>
+                        <li><a href="your.html">너의 결혼식</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">comedy &nbsp;&nbsp;<span> ▼</span></a>
+                    <ul>
+                        <li><a href="hard.html">극한직업</a></li>
+                        <li><a href="twen.html">스물</a></li>
+                        <li><a href="men.html">청년경찰</a></li>
+                        <li><a href="possible.html">미션 파서블</a></li>
+
+
+                    </ul>
+                </li>
+                <li><a href="#">action &nbsp;&nbsp;<span>▼</span></a>
+                    <ul>
+                        <li><a href="dark.html">다크 나이트</a></li>
+                        <li><a href="car.html">본노의 질주</a></li>
+                        <li><a href="lee.html">신세계</a></li>
+                        <li><a href="ae.html">베테랑</a></li>
+
+                    </ul>
+                  </li>
+                
+                <li><a href="#">thriller &nbsp;&nbsp;<span>▼</spar></a>
+                    <ul>
+                        <li><a href="tna.html">숨바꼭질</a></li>
+                        <li><a href="o.html">오펀</a></li>
+                        <li><a href="zjs.html">컨저링</a></li>
+                        <li><a href="call.html">콜</a></li>
+                        </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <article id="media">
+            <p>
+            <video src="media/hello/hello.mp4" width ="700" height="500"
+                controls >
+            error
+            </video>
+            </p>
+        </article>
+
+        <article id="info">
+            <div>
+            <h2><br><br><br>안녕 헤이즐</h2><br><br>
+
+            <p><b>- 출연 -</b><br>
+
+            <br>쉐일린 우들리(헤이즐 역), 안셀 엘고역(어거스터스 워터스 역),
+            <br>냇울프(이삭 역), 윌렘 대포(피터 반 후텐 역)<br><br>
+
+            <b>- 개봉 -</b><br>
+            <br>2014년 8월 13일<br><br>
+
+            <br><b>- 국가 -</b><br>
+            <br>미국<br><br>
+
+            <br><b>- 러닝타임 -</b><br>
+            <br>125분<br><br>
+
+            <br><b>- 평점 -</b><br>
+            <br>8.48<br><br>
+
+            <br><b>- 줄거리 -</b><br><br>
+            산소통을 캐리어처럼 끌고 호흡기를 생명줄처럼 차고 있는 헤이즐.<br>
+            집에 틀어박혀 리얼리티 쇼나 보며 하루를 축내는 자신을 걱정하는 <br>
+            가족에게 등 떠밀려 어쩔 수 없이 참석한 암 환자 모임에서 꽃미소가<br>
+            매력적인 어거스터스를 만난다. 담배를 입에 물었지만 불은 붙이지<br>
+            않는 ‘상징적인 행동’으로 헤이즐의 맹비난을 재치있게 받아넘긴<br>
+            어거스터스는 시크하고 우울증마저 겪는 헤이즐을 두근거리게 만든다.</p><br><br>
+            </div>
+        </article>
+
+        <article id="who">
+            <br><br><br><h2>스틸컷</h2><br><br>
+            <div data-role="slider" data-width="500" data-height="300">
+                <div class="container">
+                    <div class="item">
+                        <img src="media/hello/hello1.jpg" alt="이미지 오류">
+                    </div>
+                    <div class="item">
+                        <img src="media/hello/hello2.jpg" alt="이미지 오류">
+                    </div>
+                    <div class="item">
+                        <img src="media/hello/hello3.jpg" alt="이미지 오류">
+                    </div>
+                </div>
+            </div>         
+            <br><br>   
+            <button id="left-button">◀</button>
+            &nbsp;&nbsp;<button id="right-button">▶</button><br><br><br>
+        </article>
+
+        <article id="review">
+        <br><br><br><h2>리뷰</h2><br><br>
+        <details>
+            <br><br><summary>리뷰를 보고싶다면 아이콘을 클릭하세요</summary>
+            <P>이건 내 인생 영화인만큼 유명해서 많이 봤을 것 같은데<br>
+                이 영환 정말 슬프다.. 대사 하나하나가 마음을 울린다.<br>
+                여주 남주가 정말 이쁜 사랑을 해서 마음이 몽글몽글해지고<br>
+                연애 세포가 막 생겨나는 느낌이다. 
+            </P>
+        </details><br><br><br><br>
+        </article>
+    </section>
+</div>
+<nav>
+    <div id="quick">
+    <br>
+    <h2>바로가기</h2><br>
+    <a href="#media">예고편</a><br><br>
+    <a href="#info">영화 정보</a><br><br>
+    <a href="#who">스틸컷</a><br><br>
+    <a href="#review">리뷰</a><br><br>
+    <a href="https://ko.wikipedia.org/wiki/%EC%95%88%EB%85%95,_%ED%97%A4%EC%9D%B4%EC%A6%90" target="_blank"><img src="media/hello/helloq.PNG"></a>
+    </div>
+
+</nav>
+
+
+<div id="random">
+    <a href="random.html" target="_blank"><p>랜덤으로<br> 영화<br>추천</p></a>
+</div>
+</body>
+</html>
